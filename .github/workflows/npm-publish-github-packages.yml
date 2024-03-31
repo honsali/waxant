@@ -15,6 +15,7 @@ jobs:
               with:
                   node-version: '20.x'
                   registry-url: 'https://npm.pkg.github.com'
+                  scope: '@waxant'
             - run: yarn install
             - run: yarn tsc -p tsconfig.comp.json
             - run: yarn rollup -c --bundleConfigAsCjs
