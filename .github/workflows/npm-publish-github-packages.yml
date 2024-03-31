@@ -17,7 +17,8 @@ jobs:
                   registry-url: https://npm.pkg.github.com
                   scope: '@honsali'
             - run: npm ci
-            - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.CD_GITHUB_TOKEN }}" > .npmrc
+            - run: echo "@honsali:registry=https://npm.pkg.github.com" > .npmrc
+            - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.CD_GITHUB_TOKEN }}" >> .npmrc
             - run: npm publish --access public --tag latest --registry https://npm.pkg.github.com
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
