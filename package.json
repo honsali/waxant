@@ -19,8 +19,9 @@
     "author": "Ilia Honsali <honsali@gmail.com>",
     "homepage": "https://github.com/honsali/waxant",
     "repository": {
+        "name": "@honsali/waxant",
         "type": "git",
-        "url": "git+https://github.com/honsali/waxant.git"
+        "url": "git://github.com/honsali/waxant.git"
     },
     "license": "MIT",
     "tnpm": {
