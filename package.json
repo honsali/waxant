@@ -20,7 +20,7 @@
     "homepage": "https://github.com/honsali/waxant",
     "repository": {
         "type": "git",
-        "url": "https://github.com/honsali/waxant.git"
+        "url": "git+https://github.com/honsali/waxant.git"
     },
     "license": "MIT",
     "tnpm": {
