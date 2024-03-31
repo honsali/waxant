@@ -27,7 +27,7 @@
         "mode": "npm"
     },
     "publishConfig": {
-        "registry": "https://registry.npmjs.org/"
+        "registry": "https://npm.pkg.github.com/"
     },
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
