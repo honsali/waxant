@@ -52,10 +52,6 @@ const ChampImmatriculation = (props) => {
         }
     }, [liste]);
 
-    useEffect(() => {
-        console.log('a', form.getFieldValue(attributes.name));
-    }, [form, attributes]);
-
     const getRules = () => {
         const n = _.isArray(attributes.name) ? _.join(attributes.name, '.') : attributes.name;
         if (attributes.requis || (validateur && validateur[n] && validateur[n].requis)) {

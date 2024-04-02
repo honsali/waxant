@@ -1,4 +1,4 @@
-import { Col, Form } from 'antd';
+import { Col, Form, Row } from 'antd';
 import _ from 'lodash';
 import React, { useEffect, useState } from 'react';
 import { MdlMessage } from '../../noyau/message/MdlMessage';
@@ -19,18 +19,11 @@ const FormulaireInline = ({ form, siChange = null, nom = null, style = null, act
         React.Children.forEach(children, (child, index) => {
             const key = `col-${index}`;
             liste.push(
-                <Col key={key} flex={child.props.largeur ? child.props.largeur : 'none'}>
+                <Col key={key} flex={child.props.largeur ? child.props.largeur : 'auto'}>
                     {React.cloneElement(child, { attributes: convert(nom, child.props), form: form, notifierChangement: siChange })}
                 </Col>
             );
         });
-        if (actionBloc) {
-            liste.push(
-                <Col key={9999} style={{ paddingTop: '20px' }} flex="none">
-                    {actionBloc}
-                </Col>
-            );
-        }
 
         setHiddenItems(hiddenListe);
         setItems(liste);
@@ -46,12 +39,20 @@ const FormulaireInline = ({ form, siChange = null, nom = null, style = null, act
             form={form}
             name={nom ? nom : _.uniqueId()}
             style={style}
-            labelCol={{ span: 24 }}
-            wrapperCol={{ span: 24 }}
             layout="vertical"
             onFieldsChange={onFieldsChange}
         >
-            <ListeChamp>{items}</ListeChamp>
+            <Row gutter={20}>
+                <Col flex="auto">
+                    <ListeChamp>{items}</ListeChamp>
+                </Col>
+                {actionBloc && (
+                    <Col flex="none" style={{ paddingTop: '20px' }}>
+                        {actionBloc}
+                    </Col>
+                )}
+            </Row>
+
             <div>{hiddenItems}</div>
         </Form>
     );

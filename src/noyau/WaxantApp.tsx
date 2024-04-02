@@ -1,5 +1,4 @@
 import { Provider as StoreProvider } from 'react-redux';
-import AppAuth from './auth/AppAuth';
 import initAxios from './axios/axios.config';
 import { ConfigAppType, ContexteApp } from './contexte/ContexteApp';
 import getStore from './redux/redux.config';
@@ -13,17 +12,15 @@ const WaxantApp = ({ config, children }: { config: ConfigAppType; children: Reac
 
     return (
         <StoreProvider store={store}>
-            <AppAuth keycloakConfig={config.keycloakConfig} mapRole={config.mapRole}>
-                <ErrorBoundary>
-                    <ContexteApp.Provider value={config}>
-                        <AppRoutes config={config}>
-                            <GlobalThemeProvider theme={config.theme} locale={config.locale}>
-                                {children}
-                            </GlobalThemeProvider>
-                        </AppRoutes>
-                    </ContexteApp.Provider>
-                </ErrorBoundary>
-            </AppAuth>
+            <ErrorBoundary>
+                <ContexteApp.Provider value={config}>
+                    <AppRoutes config={config}>
+                        <GlobalThemeProvider theme={config.theme} locale={config.locale}>
+                            {children}
+                        </GlobalThemeProvider>
+                    </AppRoutes>
+                </ContexteApp.Provider>
+            </ErrorBoundary>
         </StoreProvider>
     );
 };

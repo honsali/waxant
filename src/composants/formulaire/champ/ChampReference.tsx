@@ -8,11 +8,10 @@ import FormulaireValidateur from '../FormulaireValidateur';
 const ChampReference = (props) => {
     const { Option } = Select;
     const [options, setOptions] = useState([]);
-    const [maxLength, setMaxLength] = useState(0);
     const [current, setCurrent] = useState(null);
     const [referenceListe, setReferenceListe] = useState(null);
     const [selectAttributes, setSelectAttributes] = useState(null);
-    const { form, attributes, reference, optionLibelle, notifierChangement, adapterLargeur } = props;
+    const { form, attributes, reference, optionLibelle, notifierChangement } = props;
     const newValue = Form.useWatch(attributes.name, form);
     const context = useContexteApp();
     const listerReference = context.listerReference;
@@ -26,11 +25,9 @@ const ChampReference = (props) => {
         const refOptionList = [];
         const ref = reference ? reference : attributes.lname;
         listerReference({ reference: ref }).then((lst) => {
-            let max = 0;
             setReferenceListe(lst);
             lst.forEach((r) => {
                 const libelle = optionLibelle ? r[optionLibelle] : r.libelle;
-                max = util.estNul(libelle) ? max : Math.max(max, libelle.length);
                 const code = r.code ? r.code : '-1';
                 refOptionList.push(
                     <Option value={code} key={code}>
@@ -39,7 +36,6 @@ const ChampReference = (props) => {
                 );
             });
             setOptions(refOptionList);
-            setMaxLength(max);
             const z = form.getFieldValue(attributes.name);
             setReference(lst, z);
         });
@@ -90,10 +86,6 @@ const ChampReference = (props) => {
         return false;
     };
 
-    const getStyle = () => {
-        return adapterLargeur ? { ...attributes.style, width: maxLength + 5 + 'ch' } : { ...attributes.style, width: '100%' };
-    };
-
     const validateur = useContext(FormulaireValidateur);
 
     const getRules = () => {
@@ -108,8 +100,7 @@ const ChampReference = (props) => {
         return (
             <div style={attributes.style}>
                 <Form.Item {...selectAttributes} rules={[getRules]}>
-                    <Select
-                        style={getStyle()} //
+                    <Select //
                         className={'champ-' + attributes.cls}
                         disabled={attributes.disabled}
                         showSearch

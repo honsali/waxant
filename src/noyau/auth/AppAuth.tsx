@@ -22,13 +22,10 @@ const AppAuth = ({ keycloakConfig, mapRole, children }) => {
         dispatch(MdlAuth.setUser({ user: returnedUser, mapRole }));
     };
 
-    if (keycloakConfig) {
-        return (
-            <ReactKeycloakProvider initOptions={{ onLoad: 'login-required', checkLoginIframe: false }} authClient={keycloak} onTokens={onTokens}>
-                {children}
-            </ReactKeycloakProvider>
-        );
-    }
-    return <>{children}</>;
+    return (
+        <ReactKeycloakProvider initOptions={{ onLoad: 'login-required', checkLoginIframe: false }} authClient={keycloak} onTokens={onTokens}>
+            {children}
+        </ReactKeycloakProvider>
+    );
 };
 export default AppAuth;

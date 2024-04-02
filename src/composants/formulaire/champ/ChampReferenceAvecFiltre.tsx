@@ -8,7 +8,6 @@ import FormulaireValidateur from '../FormulaireValidateur';
 const ChampReferenceAvecFiltre = (props) => {
     const { Option } = Select;
     const [options, setOptions] = useState([]);
-    const [maxLength, setMaxLength] = useState(0);
     const [current, setCurrent] = useState(null);
     const [referenceListe, setReferenceListe] = useState(null);
     const [selectAttributes, setSelectAttributes] = useState(null);
@@ -35,11 +34,9 @@ const ChampReferenceAvecFiltre = (props) => {
             const refOptionList = [];
             const ref = reference ? reference : attributes.lname;
             listerReference({ reference: ref, arg: arg.code }).then((liste) => {
-                let max = 0;
                 setReferenceListe(liste);
                 liste.forEach((r) => {
                     const libelle = optionLibelle ? r[optionLibelle] : r.libelle;
-                    max = util.estNul(libelle) ? max : Math.max(max, libelle.length);
                     const code = r.code ? r.code : '-1';
                     refOptionList.push(
                         <Option value={code} key={code}>
@@ -48,7 +45,6 @@ const ChampReferenceAvecFiltre = (props) => {
                     );
                 });
                 setOptions(refOptionList);
-                setMaxLength(max);
                 const z = form.getFieldValue(attributes.name);
                 setReference(liste, z, false);
             });
@@ -104,10 +100,6 @@ const ChampReferenceAvecFiltre = (props) => {
         return false;
     };
 
-    const getStyle = () => {
-        return adapterLargeur ? { ...attributes.style, width: maxLength + 5 + 'ch' } : { ...attributes.style, width: '100%' };
-    };
-
     const validateur = useContext(FormulaireValidateur);
 
     const getRules = () => {
@@ -122,8 +114,7 @@ const ChampReferenceAvecFiltre = (props) => {
         return (
             <div style={attributes.style}>
                 <Form.Item {...selectAttributes} rules={[getRules]}>
-                    <Select
-                        style={getStyle()} //
+                    <Select //
                         className={'champ-' + attributes.cls}
                         disabled={attributes.disabled || !arg}
                         showSearch
