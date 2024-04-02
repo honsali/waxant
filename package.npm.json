@@ -1,6 +1,6 @@
 {
-    "name": "@honsali/waxant",
-    "version": "1.1.7",
+    "name": "waxant",
+    "version": "1.1.6",
     "description": "Wafa Extension for Ant Design",
     "keywords": [
         "waxant",
@@ -28,7 +28,7 @@
         "mode": "npm"
     },
     "publishConfig": {
-        "registry": "https://npm.pkg.github.com/honsali"
+        "registry": "https://registry.npmjs.org/"
     },
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
