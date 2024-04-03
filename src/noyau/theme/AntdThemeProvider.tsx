@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/fr';
 import StyledThemeProvider from './StyledThemeProvider';
 
-const GlobalThemeProvider = ({ children, theme, locale }) => {
+const AntdThemeProvider = ({ children, theme, locale }) => {
     dayjs.locale(locale);
     return (
         <ConfigProvider theme={theme} locale={locale}>
@@ -13,4 +13,4 @@ const GlobalThemeProvider = ({ children, theme, locale }) => {
     );
 };
 
-export default GlobalThemeProvider;
+export default AntdThemeProvider;

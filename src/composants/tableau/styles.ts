@@ -29,7 +29,7 @@ export const STable = styled(Table)`
             }
             &.selectionne {
                 .ant-table-cell {
-                    background-color: ${(props) => props.theme.token.colorPrimary};
+                    background-color: ${(props) => `${props.theme.token.colorPrimary}1A`};
                 }
                 .visibleSiHover {
                     color: ${(props) => props.theme.token.colorPrimary};

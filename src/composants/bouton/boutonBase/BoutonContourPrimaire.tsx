@@ -1,6 +1,6 @@
+import { ConfigProvider, theme } from 'antd';
 import Bouton, { BoutonProps } from './Bouton';
 import BoutonContourNeutre from './BoutonContourNeutre';
-import { ConfigProvider, theme } from 'antd';
 
 const BoutonContourPrimaire = (props: BoutonProps) => {
     const { token } = theme.useToken();

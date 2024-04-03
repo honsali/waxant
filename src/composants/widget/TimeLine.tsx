@@ -37,4 +37,5 @@ const TimeLine = ({ items }) => {
         </div>
     );
 };
+
 export default TimeLine;

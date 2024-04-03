@@ -1,10 +1,11 @@
 export interface IInfoActionEchouee {
     code?: string;
     erreur?: string;
-    listeErreurSimple?: IErreurSimple[];
+    listeErreurServeur?: IErreurServeur[];
+    listeErreurDirecte?: string[];
 }
 
-export interface IErreurSimple {
+export interface IErreurServeur {
     code?: string;
     severity?: string;
     params?: [];

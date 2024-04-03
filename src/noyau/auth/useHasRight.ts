@@ -14,4 +14,5 @@ const useHasRight = (action): boolean => {
     }
     return hr;
 };
+
 export default useHasRight;

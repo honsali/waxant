@@ -15,13 +15,13 @@ export type BoutonProps = {
     className?: string | null;
 };
 
-const Bouton = ({ nom = null, contexte = '', action = null, libelle = null, icone = null, inactif = null, visible = true, rid = null, toolTip = null, width = null, className = '' }: BoutonProps) => {
+const Bouton = ({ nom = null, contexte = null, action = null, libelle = null, icone = null, inactif = null, visible = true, rid = null, toolTip = null, width = null, className = '' }: BoutonProps) => {
     const i18n = useI18n();
     if (visible) {
         return (
             <Tooltip placement="top" title={toolTip || inactif}>
                 <Button //
-                    id={`bouton_${contexte}_${nom}`}
+                    id={`bouton${contexte ? '_' + contexte : ''}_${nom}`}
                     onClick={inactif ? null : action}
                     icon={icone}
                     loading={rid !== null}

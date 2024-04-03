@@ -35,4 +35,5 @@ const useContexteApp = () => {
     }
     return context;
 };
+
 export default useContexteApp;

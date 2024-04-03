@@ -13,4 +13,5 @@ const TargetIcon = ({ couleur }) => {
         />
     );
 };
+
 export default TargetIcon;

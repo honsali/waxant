@@ -82,4 +82,5 @@ const Accordeon = (props) => {
     };
     return <Composant items={items} accordion activeKey={blocCourant} expandIconPosition={'end'} bordered={false} onChange={siChange}></Composant>;
 };
+
 export default Accordeon;

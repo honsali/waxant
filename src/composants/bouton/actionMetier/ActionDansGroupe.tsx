@@ -14,4 +14,5 @@ const ActionDansGroupe = (props) => {
         return <ActionNormale {...props} />;
     }
 };
+
 export default ActionDansGroupe;

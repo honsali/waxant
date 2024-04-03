@@ -28,4 +28,5 @@ const AppAuth = ({ keycloakConfig, mapRole, children }) => {
         </ReactKeycloakProvider>
     );
 };
+
 export default AppAuth;

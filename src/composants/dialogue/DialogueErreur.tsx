@@ -122,4 +122,5 @@ const DialogueErreur = () => {
         </SDialogErreur>
     );
 };
+
 export default DialogueErreur;

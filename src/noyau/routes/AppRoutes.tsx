@@ -1,4 +1,3 @@
-import mapRole from 'commun/securite/mapRole';
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { MdlAuth } from '../auth/MdlAuth';
@@ -12,7 +11,7 @@ const AppRoutes = ({ config, children }) => {
         dispatch(
             MdlAuth.setUser({
                 user: { username: 'invite', roleList: ['ROLE_INVITE'] },
-                mapRole,
+                mapRole: config.mapRole,
             })
         );
         setRoutes(config.mapDomaine['invite'].routes);
@@ -29,4 +28,5 @@ const AppRoutes = ({ config, children }) => {
         </BrowserRouter>
     );
 };
+
 export default AppRoutes;

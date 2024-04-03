@@ -4,7 +4,7 @@ import { ConfigAppType, ContexteApp } from './contexte/ContexteApp';
 import getStore from './redux/redux.config';
 import AppRoutes from './routes/AppRoutes';
 import ErrorBoundary from './routes/ErrorBoundary';
-import GlobalThemeProvider from './theme/AntdThemeProvider';
+import AntdThemeProvider from './theme/AntdThemeProvider';
 
 const WaxantApp = ({ config, children }: { config: ConfigAppType; children: React.ReactNode }) => {
     initAxios(config.apiTimeout);
@@ -15,9 +15,9 @@ const WaxantApp = ({ config, children }: { config: ConfigAppType; children: Reac
             <ErrorBoundary>
                 <ContexteApp.Provider value={config}>
                     <AppRoutes config={config}>
-                        <GlobalThemeProvider theme={config.theme} locale={config.locale}>
+                        <AntdThemeProvider theme={config.theme} locale={config.locale}>
                             {children}
-                        </GlobalThemeProvider>
+                        </AntdThemeProvider>
                     </AppRoutes>
                 </ContexteApp.Provider>
             </ErrorBoundary>

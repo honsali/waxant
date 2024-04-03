@@ -47,13 +47,13 @@ const waxantMiddleWare = (store) => (next) => (action) => {
         if (err.status) {
             switch (err.status) {
                 case -1:
-                    message = { code: 'error.validation.form', listeErreurSimple: err.data?.errors };
+                    message = { code: 'error.validation.form', listeErreurServeur: err.data?.errors };
                     break;
                 case 0:
                     message = { code: 'error.server.not.reachable' };
                     break;
                 case 400:
-                    message = { code: 'error.bad.request', erreur: err.data.code, listeErreurSimple: err.data?.errors };
+                    message = { code: 'error.bad.request', erreur: err.data.code, listeErreurServeur: err.data?.errors };
                     break;
                 case 404:
                     message = { code: 'error.url.not.found' };

@@ -51,4 +51,5 @@ const GroupeAction = ({ listeAction = null, type = 'page', nom = null, children 
 
     return <TypeBouttonAction.Provider value={type}>{getContent()}</TypeBouttonAction.Provider>;
 };
+
 export default GroupeAction;
