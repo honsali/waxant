@@ -20,14 +20,25 @@ const libelle = (key: string, mapLibelle: Record<string, string>): string => {
             return mapLibelle[key] || `[${key}]`;
     }
 };
-const col = (key: string, mapLibelle: Record<string, string>): string => (mapLibelle['col_' + key] || '') + ' ';
+const col = (key: string, mapLibelle: Record<string, string>): string => {
+    if (util.estNul(key)) {
+        return '[]';
+    }
+    return mapLibelle[`col_${key}`] || `[col_${key}]`;
+};
 
 const action = (key: string, mapLibelle: Record<string, string>, mapActionUI: Record<string, string>): string => {
+    if (util.estNul(key)) {
+        return '[]';
+    }
     const keyBase = key.includes('.') ? key.substring(0, key.indexOf('.')) : key;
     return mapActionUI[key] || mapActionUI[keyBase] || libelle(key, mapLibelle);
 };
 
 const titre = (key: string, mapLibelle: Record<string, string>, mapActionUI: Record<string, string>, mapTitre: Record<string, string>): string => {
+    if (util.estNul(key)) {
+        return '[]';
+    }
     return mapTitre[key] || action(key, mapLibelle, mapActionUI);
 };
 
