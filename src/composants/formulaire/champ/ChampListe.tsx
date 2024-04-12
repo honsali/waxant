@@ -11,7 +11,7 @@ const ChampListe = (props) => {
     const [current, setCurrent] = useState(null);
     const [referenceListe, setReferenceListe] = useState(null);
     const [selectAttributes, setSelectAttributes] = useState(null);
-    const { form, attributes, liste, optionLibelle, notifierChangement, adapterLargeur } = props;
+    const { form, attributes, liste, optionLibelle, adapterLargeur } = props;
     const newValue = Form.useWatch(attributes.name, form);
 
     useEffect(() => {
@@ -71,10 +71,6 @@ const ChampListe = (props) => {
             }
             if (attributes.onChange) {
                 attributes.onChange(x);
-            }
-
-            if (notifierChangement) {
-                notifierChangement();
             }
         }
     };

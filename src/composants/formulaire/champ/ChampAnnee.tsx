@@ -7,7 +7,7 @@ import FormulaireValidateur from '../FormulaireValidateur';
 
 const ChampAnnee = (props: any) => {
     const formatDate = useContexteApp().formatDate;
-    const { form, attributes, notifierChangement } = props;
+    const { form, attributes } = props;
     const style = { style: { ...attributes.style, width: '100%' } };
 
     useEffect(() => {
@@ -45,10 +45,6 @@ const ChampAnnee = (props: any) => {
 
         if (attributes.onChange) {
             attributes.onChange(stringDate);
-        }
-
-        if (notifierChangement) {
-            notifierChangement();
         }
     };
     const validateur = useContext(FormulaireValidateur);

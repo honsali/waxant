@@ -20,7 +20,7 @@ const FormulaireInline = ({ form, siChange = null, nom = null, style = null, act
             const key = `col-${index}`;
             liste.push(
                 <Col key={key} flex={child.props.largeur ? child.props.largeur : 'auto'}>
-                    {React.cloneElement(child, { attributes: convert(nom, child.props), form: form, notifierChangement: siChange })}
+                    {React.cloneElement(child, { attributes: convert(nom, child.props), form })}
                 </Col>
             );
         });

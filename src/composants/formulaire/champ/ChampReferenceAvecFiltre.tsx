@@ -11,7 +11,7 @@ const ChampReferenceAvecFiltre = (props) => {
     const [current, setCurrent] = useState(null);
     const [referenceListe, setReferenceListe] = useState(null);
     const [selectAttributes, setSelectAttributes] = useState(null);
-    const { form, attributes, reference, optionLibelle, notifierChangement, adapterLargeur } = props;
+    const { form, attributes, reference, optionLibelle } = props;
     const newValue = Form.useWatch(attributes.name, form);
     const context = useContexteApp();
     const listerReference = context.listerReference;
@@ -85,10 +85,6 @@ const ChampReferenceAvecFiltre = (props) => {
 
             if (notifier && attributes.onChange) {
                 attributes.onChange(reference);
-            }
-
-            if (notifierChangement) {
-                notifierChangement();
             }
         }
     };

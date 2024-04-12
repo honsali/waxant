@@ -21,7 +21,7 @@ const Formulaire = ({ form, siChange = null, nombreColonne = 1, nom = null, styl
             const colWidth = child.props.surTouteLaLigne ? 24 : 24 / nombreColonne;
             const key = `col-${index}`;
             if (child.props.hidden) {
-                hiddenListe.push(<span key={key}>{React.cloneElement(child, { attributes: convert(nom, child.props), form, notifierChangement: siChange })}</span>);
+                hiddenListe.push(<span key={key}>{React.cloneElement(child, { attributes: convert(nom, child.props), form })}</span>);
             } else if (child.props.cache) {
                 liste.push(
                     <Col span={colWidth} key={key}>
@@ -31,7 +31,7 @@ const Formulaire = ({ form, siChange = null, nombreColonne = 1, nom = null, styl
             } else if (util.estNul(child.props.invisible) || !child.props.invisible) {
                 liste.push(
                     <Col span={colWidth} key={key}>
-                        {child.props.contenu ? React.cloneElement(child.props.contenu) : React.cloneElement(child, { attributes: convert(nom, child.props), form, notifierChangement: siChange })}
+                        {child.props.contenu ? React.cloneElement(child.props.contenu) : React.cloneElement(child, { attributes: convert(nom, child.props), form })}
                     </Col>
                 );
                 if (child.props.seulDansLaLigne) {

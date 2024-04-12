@@ -6,7 +6,7 @@ import { useContext, useEffect, useState } from 'react';
 import BoutonContourPrimaire from '../../bouton/boutonBase/BoutonContourPrimaire';
 import FormulaireValidateur from '../FormulaireValidateur';
 const ChampFichier = (props) => {
-    const { form, attributes, notifierChangement } = props;
+    const { form, attributes } = props;
     const [actionVisible, setActionVisible] = useState(true);
     const validateur = useContext(FormulaireValidateur);
 

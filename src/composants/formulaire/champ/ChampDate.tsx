@@ -8,7 +8,7 @@ import FormulaireValidateur from '../FormulaireValidateur';
 const ChampDate = (props: any) => {
     const formatDate = useContexteApp().formatDate;
     const [localAttributes, setLocalAttributes] = useState({});
-    const { form, attributes, notifierChangement } = props;
+    const { form, attributes } = props;
     const style = { style: { ...attributes.style, width: '100%' } };
     if (props.style && props.style.width) {
         style.style.width = props.style.width;
@@ -49,10 +49,6 @@ const ChampDate = (props: any) => {
 
         if (attributes.onChange) {
             attributes.onChange(stringDate);
-        }
-
-        if (notifierChangement) {
-            notifierChangement();
         }
     };
 

@@ -4,7 +4,7 @@ import { useContext, useEffect } from 'react';
 import FormulaireValidateur from '../FormulaireValidateur';
 
 const ChampOuiNon = (props: any) => {
-    const { form, attributes, notifierChangement } = props;
+    const { form, attributes } = props;
     const validateur = useContext(FormulaireValidateur);
     useEffect(() => {
         const booleanValue = form.getFieldValue(attributes.name);
@@ -41,10 +41,6 @@ const ChampOuiNon = (props: any) => {
 
         if (attributes.onChange) {
             attributes.onChange(booleanValue);
-        }
-
-        if (notifierChangement) {
-            notifierChangement();
         }
     };
     const getRules = () => {

@@ -14,7 +14,7 @@ const FormulaireMini = ({ form, siChange = null, nom = null, style = null, child
     useEffect(() => {
         const liste = [];
         React.Children.forEach(children, (child, index) => {
-            liste.push(React.cloneElement(child, { attributes: convert(nom, child.props), form: form, notifierChangement: siChange }));
+            liste.push(React.cloneElement(child, { attributes: convert(nom, child.props), form }));
         });
         setItems(liste);
     }, [children, form, siChange]);

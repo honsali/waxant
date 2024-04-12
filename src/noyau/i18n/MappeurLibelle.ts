@@ -22,12 +22,12 @@ const libelle = (key: string, mapLibelle: Record<string, string>): string => {
 };
 const col = (key: string, mapLibelle: Record<string, string>): string => {
     if (util.estNul(key)) {
-        return '[]';
+        return '';
     }
-    return mapLibelle[`col_${key}`] || `[col_${key}]`;
+    return mapLibelle[`col_${key}`] || '';
 };
 
-const action = (key: string, mapLibelle: Record<string, string>, mapActionUI: Record<string, string>): string => {
+const action = (key: string, mapActionUI: Record<string, string>, mapLibelle: Record<string, string>): string => {
     if (util.estNul(key)) {
         return '[]';
     }
@@ -35,7 +35,7 @@ const action = (key: string, mapLibelle: Record<string, string>, mapActionUI: Re
     return mapActionUI[key] || mapActionUI[keyBase] || libelle(key, mapLibelle);
 };
 
-const titre = (key: string, mapLibelle: Record<string, string>, mapActionUI: Record<string, string>, mapTitre: Record<string, string>): string => {
+const titre = (key: string, mapTitre: Record<string, string>, mapActionUI: Record<string, string>, mapLibelle: Record<string, string>): string => {
     if (util.estNul(key)) {
         return '[]';
     }

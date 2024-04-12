@@ -9,7 +9,7 @@ const templateMap = {
     'default.supprimer': _.template('<%= typeLabel %> a été supprimée avec Succès'),
 };
 
-const get = (infoActionReussie: IInfoActionReussie, mapLibelle: Record<string, string>, mapMessage: Record<string, string>): string | null => {
+const get = (infoActionReussie: IInfoActionReussie, mapMessage: Record<string, string>, mapLibelle: Record<string, string>): string | null => {
     if (util.estNul(infoActionReussie?.key)) {
         return null;
     }

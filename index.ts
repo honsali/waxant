@@ -9,6 +9,7 @@ export { default as ActionImportante } from './src/composants/bouton/actionBase/
 export { default as ActionLien } from './src/composants/bouton/actionBase/ActionLien';
 export { default as ActionLienInactif } from './src/composants/bouton/actionBase/ActionLienInactif';
 export { default as ActionNormale } from './src/composants/bouton/actionBase/ActionNormale';
+export { default as ActionOnglet } from './src/composants/bouton/actionBase/ActionOnglet';
 export { default as ActionAjouter } from './src/composants/bouton/actionMetier/ActionAjouter';
 export { default as ActionAjouterInactifAvecRaison } from './src/composants/bouton/actionMetier/ActionAjouterInactifAvecRaison';
 export { default as ActionAnnuler } from './src/composants/bouton/actionMetier/ActionAnnuler';
@@ -31,6 +32,7 @@ export { default as BoutonContourPrimaire } from './src/composants/bouton/bouton
 export { default as BoutonContourSecondaire } from './src/composants/bouton/boutonBase/BoutonContourSecondaire';
 export { default as BoutonIcone } from './src/composants/bouton/boutonBase/BoutonIcone';
 export { default as BoutonLien } from './src/composants/bouton/boutonBase/BoutonLien';
+export { default as BoutonOnglet } from './src/composants/bouton/boutonBase/BoutonOnglet';
 export { default as BoutonPleinNeutre } from './src/composants/bouton/boutonBase/BoutonPleinNeutre';
 export { default as BoutonPleinPrimaire } from './src/composants/bouton/boutonBase/BoutonPleinPrimaire';
 export { default as BoutonPleinSecondaire } from './src/composants/bouton/boutonBase/BoutonPleinSecondaire';
@@ -95,6 +97,7 @@ export { default as ChampTexteArabe } from './src/composants/formulaire/champ/Ch
 export { default as ChampTexteLong } from './src/composants/formulaire/champ/ChampTexteLong';
 export { default as ChampTexteModifiableParDialogue } from './src/composants/formulaire/champ/ChampTexteModifiableParDialogue';
 export { default as ChampVide } from './src/composants/formulaire/champ/ChampVide';
+export { default as useOnChange } from './src/composants/formulaire/useOnChange';
 export { default as TargetIcon } from './src/composants/icone/TargetIcon';
 export { default as Colonne } from './src/composants/tableau/Colonne';
 export { default as Tableau } from './src/composants/tableau/Tableau';

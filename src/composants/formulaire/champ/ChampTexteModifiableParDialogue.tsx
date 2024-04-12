@@ -50,10 +50,6 @@ const ChampTexteModifiableParDialogue = (props) => {
         if (props.attributes.onChange) {
             props.attributes.onChange(null);
         }
-
-        if (props.notifierChangement) {
-            props.notifierChangement();
-        }
     };
     return (
         <div>

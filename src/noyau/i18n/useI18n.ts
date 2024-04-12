@@ -16,7 +16,7 @@ const useI18n = () => {
             titre: (key: string): string => MappeurLibelle.titre(key, mapTitre, mapActionUI, mapLibelle),
             actionCtrl: (key: string): string => MappeurLibelle.actionCtrl(key, mapActionCtrl),
             erreur: (infoActionEchouee: IInfoActionEchouee): IMessageErreur => MappeurErreur.get(infoActionEchouee, mapErreur),
-            message: (infoActionReusie: IInfoActionReussie): string => MappeurInfoActionReussie.get(infoActionReusie, mapLibelle, mapMessage),
+            message: (infoActionReusie: IInfoActionReussie): string => MappeurInfoActionReussie.get(infoActionReusie, mapMessage, mapLibelle),
         }),
         [mapLibelle, mapActionCtrl, mapActionUI, mapTitre, mapErreur, mapMessage]
     );

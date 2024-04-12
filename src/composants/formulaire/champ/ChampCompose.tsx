@@ -27,10 +27,10 @@ const ChampCompose = (props: any) => {
     useEffect(() => {
         const list = [];
         React.Children.forEach(props.children, (c, index) => {
-            list.push(React.cloneElement(c, { key: index, attributes: extract(c.props), form: props.form, notifierChangement: props.notifierChangement }));
+            list.push(React.cloneElement(c, { key: index, attributes: extract(c.props), form: props.form }));
         });
         setItems(list);
-    }, [props.form, props.notifierChangement, props.children]);
+    }, [props.form, props.children]);
 
     return (
         <Form.Item {...props.attributes}>
